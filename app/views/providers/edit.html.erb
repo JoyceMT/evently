@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Edit your service!</h1>
+  <%= simple_form_for(@provider) do |f| %>
+    <div class="form-group ml-1 mb-5 px-5">
+      <%= f.input :name, class: 'form-control' %>
+      <br>
+      <%= f.input :description, class: 'form-control'%>
+      <br>
+      <%= f.input :address %>
+      <br>
+      <%= f.input :phone %>
+      <br>
+      <%= f.input :price, as: :numeric %>
+      <br>
+      <%= f.input :facebook %>
+      <br>
+      <%= f.input :instagram %>
+      <br>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <%= link_to "Cancel", "/", class: "btn btn-light" %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'Show', provider_path(@provider) %> |
+<%= link_to 'Back', providers_path %>

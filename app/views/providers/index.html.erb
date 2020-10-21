@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="card-container">
+    <% @providers.each do |provider| %>
+      <div class="card-product">
+        <div class="card-slider">
+          <div class="card-images">
+            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="...">
+          </div>
+        </div>
+        <div class="card-infos">
+          <div class="card-content">
+            <div class="card-infos-name">
+              <h2><%= provider[:name] %></h2>
+            </div>
+            <div class="card-infos-description">
+              <p><%= provider[:address] %></p>
+            </div>
+            <div class="card-rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="card-categories">
+              <p><%= provider[:description] %></p>
+            </div>
+            <div class="card-infos-footer">
+              <div class="card-price">
+                <p class="price-content">$<%= provider[:price] %>/persona</span></p>
+              </div>
+              <div class="button">
+                <%=button_to "Quiero más información", provider_path(provider)%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

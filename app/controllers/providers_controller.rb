@@ -25,6 +25,8 @@ class ProvidersController < ApplicationController
   def update
     @provider = Provider.find(params[:id])
     @provider.update(provider_params)
+
+    redirect_to provider_path(@provider)
   end
 
   def destroy
