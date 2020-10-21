@@ -27,11 +27,9 @@
             </div>
             <div class="card-infos-footer">
               <div class="card-price">
-                <p class="price-content">$<%= provider[:price] %>/persona</span></p>
+                <p>$<%= provider[:price] %>/persona</span></p>
               </div>
-              <div class="button">
-                <%=button_to "Quiero más información", provider_path(provider)%>
-              </div>
+                <%=link_to '<button type="button" class="btn-pry">Ver más</button>'.html_safe, provider_path(provider)%>
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@
 }
 
 .card-content {
-  padding: 30px;
+  padding: 20px;
   position: relative;
 }
 
@@ -39,27 +39,34 @@
   padding-right: 40px;
 }
 
+.card-price p {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
 .card-infos-description {
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
   color: #6c6c6c;
   word-break: break-word;
+  margin-top: -4px;
 }
 
 .card-infos-footer {
   display: flex;
   justify-content: space-between;
-  vertical-align: center;
+  align-items: center;
 }
 
 .price-content {
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: bolder;
 }
 
 .card-rating {
-  margin-top: -5px;
-  margin-bottom: 8px;
+  margin-top: -10px;
+  margin-bottom: 15px;
 }
 
 .checked {
@@ -68,4 +75,18 @@
 
 .card-categories p {
   color: #6c6c6c;
+  font-size: 21px;
+  margin-top: -4px;
+}
+
+.btn-pry {
+  background-color: #ff2b3d;
+  border-radius: 4px;
+  border: 1px solid #ff2b3d;
+  padding: 5px 25px;
+  color: white;
+}
+
+.btn-pry:hover {
+  background-color: #D90416;
 }
