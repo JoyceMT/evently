@@ -1,19 +1,31 @@
-<h1>List your service</h1>
-
 <div class="container">
-  <h1>List your service!</h1>
   <%= simple_form_for @provider do |f| %>
     <div class="form-group ml-1 mb-5 px-5">
+      <h2>Tu empresa</h2>
       <%= f.input :name, class: 'form-control' %>
+      <%= f.label :regions %>
       <br>
-      <%= f.input :description, class: 'form-control'%>
+      <%= select_tag "region_id", options_for_select(Region.pluck(:name, :id)) %>
       <br>
       <%= f.input :address %>
       <br>
       <%= f.input :phone %>
       <br>
+      <%= f.input :description, class: 'form-control'%>
+      <br>
+      <h2>Para que tipo de eventos ofreces tus servicios:</h2>
+      <%= f.label :events %>
+      <br>
+      <%= select_tag "event_id", options_for_select(Event.pluck(:name, :id)) %>
+      <h2>Selecciona la Categoría de tu servicio</h2>
+      <%= f.label :categories %>
+      <br>
+      <%= select_tag "category_id", options_for_select(Category.pluck(:name, :id)) %>
+      <br>
+      <h2>¿A partir de qué precio puedo contratar sus servicios?</h2>
       <%= f.input :price, as: :numeric %>
       <br>
+      <h2>Agrega tus redes sociales</h2>
       <%= f.input :facebook %>
       <br>
       <%= f.input :instagram %>
