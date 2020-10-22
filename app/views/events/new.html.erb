@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>List your event!</h1>
+  <%= simple_form_for @event do |f| %>
+    <div class="form-group ml-1 mb-5 px-5">
+      <%= f.input :name, class: 'form-control' %>
+      <br>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
