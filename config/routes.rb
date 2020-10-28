@@ -15,5 +15,14 @@ Rails.application.routes.draw do
   post 'events', to: 'events#create'
   get 'regions/new', to: 'regions#new'
   post 'regions', to: 'regions#create'
+  get 'services/new', to: 'services#new'
+  post 'services', to: 'services#create'
+  get 'services/index', to: 'services#index'
+  get 'provider_categories/new', to: 'provider_categories#new'
+  post 'provider_categories', to: 'provider_categories#create'
+  get 'provider_events/new', to: 'provider_events#new'
+  post 'provider_events', to: 'provider_events#create'
+  get 'provider_regions/new', to: 'provider_regions#new'
+  post 'provider_regions', to: 'provider_regions#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
