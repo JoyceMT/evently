@@ -1,0 +1,11 @@
+<div class="container">
+  <%= simple_form_for(@provider_regions, html: { Pmultipart: true }) do |f| %>
+    <div class="form-group ml-1 mb-5 px-5">
+      <h2>Tus Regiones</h2>
+      <%= f.object.id %>
+      <%= f.association :region, :label => "Selecciona los Estados donde brindas tu Servicio", :as => :check_boxes %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <%= link_to "Cancel", "/pages/home", class: "btn btn-light" %>
+    </div>
+  <% end %>
+</div>

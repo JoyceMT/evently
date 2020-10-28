@@ -1,0 +1,11 @@
+<div class="container">
+  <%= simple_form_for @provider_categories do |f| %>
+    <div class="form-group ml-1 mb-5 px-5">
+      <h2>Tu Categoría</h2>
+      <%= f.input :provider_id, :label => "Nombre", class: 'form-control' %>
+      <%= f.input :category_id, :label => "Selecciona la Categoría de tu Servicio", :as => :check_boxes, :collection => Category.all %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <%= link_to "Cancel", "/pages/home", class: "btn btn-light" %>
+    </div>
+  <% end %>
+</div>
