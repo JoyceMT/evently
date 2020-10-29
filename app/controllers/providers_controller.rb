@@ -10,7 +10,7 @@ class ProvidersController < ApplicationController
   def new
     @provider = Provider.new
     @provider.provider_events.build
-    @provider.provider_categories.build
+    @provider.provider_services.build
     @provider.provider_regions.build
   end
 
@@ -43,6 +43,6 @@ class ProvidersController < ApplicationController
   private
 
   def provider_params
-    params.require(:provider).permit(:name, :description, :address, :phone, :min_price, :max_price, :facebook, :instagram, :google, { event_ids: [] }, { category_ids: [] }, { region_ids: [] } )
+    params.require(:provider).permit(:name, :description, :address, :phone, :min_price, :max_price, :facebook, :instagram, :google, { event_ids: [] }, { service_ids: [] }, { region_ids: [] } )
   end
 end

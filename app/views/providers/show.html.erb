@@ -1,41 +1,19 @@
 <div class="container">
 
   <h1><%= @provider.name %></h1>
-  <h3><%= @provider.description %></h3>
   <h3><%= @provider.address %></h3>
   <h3><%= @provider.phone %></h3>
-  <h2>$<%= @provider.min_price %> - <%=@provider.max_price %>/person</h2>
 
-  <h2> Events </h2>
+
+  <h2>Información sobre <%= @provider.name %></h2>
+  <h3><%= @provider.description.html_safe %><h3>
+
+  <p>Desde $<%= @provider.min_price %> hasta $<%=@provider.max_price %></p>
+
+  <h2>Servicios </h2>
   <ul>
-    <% @provider.events.each do |event| %>
-    <li><%= event.name %></li>
+    <% @provider.services.each do |service| %>
+    <li><%= service.name %></li>
     <% end %>
   </ul>
-
-    <h2> Category </h2>
-  <ul>
-    <% @provider.categories.each do |category| %>
-    <li><%= category.name %></li>
-    <% end %>
-  </ul>
-
-  <h2> Services </h2>
-  <ul>
-    <li><%= @service.name %></li>
-    <% end %>
-  </ul>
-
-    <h2> Regions </h2>
-  <ul>
-    <% @provider.regions.each do |region| %>
-    <li><%= region.name %></li>
-    <% end %>
-  </ul>
-
-  <h2><%= @provider.events.size %></h2>
-  <h2><%= @provider.categories.size %></h2>
-  <h2><%= @provider.regions.size %></h2>
-
-
 </div>
