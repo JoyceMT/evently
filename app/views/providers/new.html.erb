@@ -20,9 +20,15 @@
       <br>
       <%= f.input :google %>
       <br>
-      <%= f.simple_fields_for :provider_events do |ff| %>
-        <%= ff.association :event, :label => "Para qué tipo de Eventos ofreces tus servicios?", :as => :check_boxes %>
-      <% end %>
+      <h2> Para qué tipo de Eventos ofreces tus servicios?</h2>
+      <%= f.collection_check_boxes :event_ids, Event.all, :id, :name %>
+      <h2>Selecciona la Categoría de tu Servicio</h2>
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+      <h2>Que servicios ofreces?</h2>
+      <%= f.collection_check_boxes :service, Service.all, :id, :name %>
+      <h2>En que Estados ofreces tu servicio?</h2>
+      <%= f.collection_check_boxes :region_ids, Region.all, :id, :name %>
+      <br>
       <%= f.submit "Submit", class: "btn btn-primary" %>
       <%= link_to "Cancel", "/pages/home", class: "btn btn-light" %>
     </div>

@@ -5,9 +5,37 @@
   <h3><%= @provider.address %></h3>
   <h3><%= @provider.phone %></h3>
   <h2>$<%= @provider.min_price %> - <%=@provider.max_price %>/person</h2>
+
+  <h2> Events </h2>
+  <ul>
+    <% @provider.events.each do |event| %>
+    <li><%= event.name %></li>
+    <% end %>
+  </ul>
+
+    <h2> Category </h2>
+  <ul>
+    <% @provider.categories.each do |category| %>
+    <li><%= category.name %></li>
+    <% end %>
+  </ul>
+
+  <h2> Services </h2>
+  <ul>
+    <li><%= @service.name %></li>
+    <% end %>
+  </ul>
+
+    <h2> Regions </h2>
+  <ul>
+    <% @provider.regions.each do |region| %>
+    <li><%= region.name %></li>
+    <% end %>
+  </ul>
+
   <h2><%= @provider.events.size %></h2>
   <h2><%= @provider.categories.size %></h2>
-  <h2><%= @provider.services.size %></h2>
   <h2><%= @provider.regions.size %></h2>
+
 
 </div>
