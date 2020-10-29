@@ -1,11 +1,12 @@
 .card-container {
   margin: 20px;
-  background-color: white;
 }
 
 .card-product {
   display: flex;
   justify-content: space-between;
+  background-color: white;
+  margin-bottom: 20px;
 }
 
 .card-slider {
@@ -71,6 +72,10 @@
 
 .checked {
   color: orange;
+}
+
+.card-categories {
+    overflow: hidden;
 }
 
 .card-categories p {

@@ -1,19 +1,65 @@
-<div class="container">
+<div class="page-container">
 
-  <h1><%= @provider.name %></h1>
-  <h3><%= @provider.address %></h3>
-  <h3><%= @provider.phone %></h3>
+  <div class="provider-container">
 
+    <h1 class="provider-title"><%= @provider.name %></h1>
 
-  <h2>Información sobre <%= @provider.name %></h2>
-  <h3><%= @provider.description.html_safe %><h3>
+    <div class="provider-address">
+      <p><%= @provider.address %></p>
+    </div>
 
-  <p>Desde $<%= @provider.min_price %> hasta $<%=@provider.max_price %></p>
+    <div class="provider-contact">
+      <i class="fas fa-phone-square"> <span><%= @provider.phone %></span></i>
+      <%= link_to(@provider.facebook) do %>
+        <i class="fab fa-facebook-square"> <%= @provider.name %></i>
+      <% end %>
+      <%= link_to(@provider.instagram) do %>
+        <i class="fab fa-instagram-square"> <%= @provider.name %></i>
+      <% end %>
+    </div>
 
-  <h2>Servicios </h2>
-  <ul>
-    <% @provider.services.each do |service| %>
-    <li><%= service.name %></li>
-    <% end %>
-  </ul>
+    <div class="provider-details">
+
+      <div class="provider-description">
+        <h2>Información sobre <%= @provider.name %></h2>
+        <h3><%= @provider.description.html_safe %><h3>
+      </div>
+
+      <div class="provider-extra-details">
+        <h4>Precios</h4>
+        <p>Desde $<%= @provider.min_price %> hasta $<%= @provider.max_price %></p>
+        <p>p/persona</p>
+        <h4>Servicios </h4>
+        <ul class="fa-ul">
+          <% @provider.services.each do |service| %>
+            <li><i class="fas fa-check"></i> <%= service.name %></li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="provider-form">
+    <form action="action_page.php">
+      <h4>SOLICITAR PRESUPUESTO</h4>
+      <input type="text" id="fname" name="firstname" placeholder="Nombre">
+      <br>
+      <input type="text" id="lname" name="lastname" placeholder="Apellido">
+      <br>
+      <input type="text" id="email" name="phone" placeholder="Email">
+      <br>
+      <input type="text" id="phone" name="phone" placeholder="Teléfono">
+      <br>
+      <input type="text" id="date" name="date" placeholder="dd/mm/aaaa">
+      <br>
+      <input type="text" id="guests" name="guests" placeholder="No. de invitados">
+      <br>
+      <textarea id="subject" name="subject" placeholder="Comentarios" style="height:200px"></textarea>
+      <br>
+      <input type="submit" value="Enviar Solicitud" class="btn btn-flat">
+    </form>
+  </div>
+
 </div>

@@ -5,4 +5,5 @@ class Provider < ApplicationRecord
   has_many :events, through: :provider_events
   has_many :provider_regions
   has_many :regions, through: :provider_regions
+  has_many :categories, through: :services
 end

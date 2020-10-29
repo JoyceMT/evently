@@ -1,0 +1,102 @@
+.page-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 10%;
+}
+
+.provider-container {
+  text-align: left;
+  display: grid;
+  background-color: white;
+  padding: 30px;
+}
+
+.provider-form {
+  margin-left: 5%;
+  background-color: white;
+  height: 50%;
+  padding: 30px;
+}
+
+.provider-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #ff0000;
+}
+
+.provider-address p {
+  font-size: 18px;
+  color: grey;
+}
+
+.provider-contact {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30%;
+}
+
+.provider-contact i {
+  color: #484848;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.fa-phone-square span {
+  font-weight: 100;
+}
+
+.provider-contact i:hover {
+  color: #ff0000;
+}
+
+.provider-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 40px;
+}
+
+.provider-description strong {
+  color: #ff0000;
+}
+
+.provider-extra-details {
+  margin-left: 10%;
+}
+
+.fa-ul {
+  padding: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
+.fa-check {
+  color: #ff0000;
+}
+
+.provider-form input, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px lightgrey;
+  font-size: 18px;
+}
+
+.provider-form h4 {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.btn {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #ff0000;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #bc0404;
+  color: white;
+}
+
+

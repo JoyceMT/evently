@@ -43,6 +43,6 @@ class ProvidersController < ApplicationController
   private
 
   def provider_params
-    params.require(:provider).permit(:name, :description, :address, :phone, :min_price, :max_price, :facebook, :instagram, :google, { event_ids: [] }, { service_ids: [] }, { region_ids: [] } )
+    params.require(:provider).permit(:name, :description, :address, :phone, :min_price, :max_price, :facebook, :instagram, :google, { event_ids: [] }, { service_ids: [] }, { region_ids: [] }, { category_ids: [] } )
   end
 end
