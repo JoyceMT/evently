@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get 'providers', to: 'providers#index'
+  get 'providers/search', to: 'providers#index', :as => 'search_page'
   get 'providers/new', to: 'providers#new'
   post 'providers', to: 'providers#create'
   get 'providers/:id', to: 'providers#show', as: :provider

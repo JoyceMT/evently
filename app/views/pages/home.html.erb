@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homepage-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1505366055494-2268a382e017?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80);">
+  <div class="container">
+    <h1>Crea tu Evento Personalizado</h1>
+    <p>Más de 10,000 proveedores a elegir</p>
+  </div>
+  <div class="col-sm-12 mt-5">
+      <%= form_tag(search_page_path, id:"search_form", :class => "center-block", :method => "get") do %>
+      <div class="input-group w-50 mx-auto">
+        <%= search_field_tag :event, params[:event], placeholder:"Elige tu tipo de evento", class: "form-control red-border pl-4" %>
+        <%= search_field_tag :category, params[:category], placeholder: "Qué buscas?", class: "form-control red-border pl-4" %>
+        <%= search_field_tag :region, params[:region], placeholder: "Dónde?", class: "form-control red-border pl-4" %>
+        <%= button_tag "Search", :class => 'btn btn-flat',:name => nil%>
+      </div>
+      <% end %>
+    </div>
+</div>
