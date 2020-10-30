@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   post 'provider_events', to: 'provider_events#create'
   get 'provider_regions/new', to: 'provider_regions#new'
   post 'provider_regions', to: 'provider_regions#create'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

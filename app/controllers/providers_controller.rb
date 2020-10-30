@@ -1,6 +1,14 @@
 class ProvidersController < ApplicationController
   def index
+    if params[:event_ids]
+    @providers = Provider.joins(:events).where('events.id' =>  params[:event_ids])
+  elsif params[:service_ids]
+    @providers = Provider.joins(:services).where('services.id' =>  params[:service_ids])
+  elsif params[:region_ids]
+    @providers = Provider.joins(:regions).where('regions.id' =>  params[:region_ids])
+  else
     @providers = Provider.all
+  end
   end
 
   def show

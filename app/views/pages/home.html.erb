@@ -1,16 +1,64 @@
 <div class="homepage-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1505366055494-2268a382e017?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80);">
-  <div class="container">
-    <h1>Crea tu Evento Personalizado</h1>
-    <p>Más de 10,000 proveedores a elegir</p>
-  </div>
-  <div class="col-sm-12 mt-5">
-      <%= form_tag(search_page_path, id:"search_form", :class => "center-block", :method => "get") do %>
-      <div class="input-group w-50 mx-auto">
-        <%= search_field_tag :event, params[:event], placeholder:"Elige tu tipo de evento", class: "form-control red-border pl-4" %>
-        <%= search_field_tag :category, params[:category], placeholder: "Qué buscas?", class: "form-control red-border pl-4" %>
-        <%= search_field_tag :region, params[:region], placeholder: "Dónde?", class: "form-control red-border pl-4" %>
-        <%= button_tag "Search", :class => 'btn btn-flat',:name => nil%>
-      </div>
-      <% end %>
+    <div class="homepage-container">
+      <h1>Crea tu Evento Personalizado</h1>
+      <p>Más de 10,000 proveedores a elegir</p>
     </div>
+    <div class="col-sm-12 mt-5">
+      <%= form_tag(search_page_path,id: "search_form", :class => "center-block", :method => "get") do %>
+      <div class="input-group w-50 mx-auto">
+        <%= select_tag "event_ids", options_from_collection_for_select(Event.all, :id, :name), :prompt => 'Elige tipo de Evento', class: "form-control red-border pl-4" %>
+        <%= select_tag "service_ids", options_from_collection_for_select(Service.all, :id, :name), :prompt => '¿Qué estás buscando', class: "form-control red-border pl-4" %>
+        <%= select_tag "region_ids", options_from_collection_for_select(Region.all, :id, :name), :prompt => '¿Dónde?', class: "form-control red-border pl-4" %>
+      <%= button_tag "Buscar", :class => 'btn btn-flat',:name => nil%>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="section-wrap">
+  <div class="widget_front_page_listing_cards">
+    <h1 class="widget-title">Top Categories</h1>
+    <h2 class="widget-subtitle">Las categorías más buscadas</h2>
+    <div class="cards">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+        Bodas
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1549565995-20b55ba61132?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80)">
+        XV años
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1448873897790-40ede9ce481d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">
+        Foto y Video
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1580824456624-90e7ebe08d4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
+  <div class="banner-container">
+    <h1>Buscas Event Planner?</h1>
+    <p>Evently te ayuda a organizar el evento de tus sueños GRATIS!</p>
+    <a class="btn btn-flat" href="#">Comienza Ahora</a>
+  </div>
+</div>
+
+<div class="section-wrap">
+  <div class="widget_front_page_listing_cards">
+    <h1 class="widget-title">Artículos</h1>
+    <h2 class="widget-subtitle">Get Inspired!</h2>
+    <div class="cards">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+        Micro Weddings
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1549236177-77e8271c34b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80)">
+        Peinados XV Años
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80)">
+        Pasteles 2021
+      </div>
+    </div>
+  </div>
 </div>
