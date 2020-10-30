@@ -1,3 +1,14 @@
+<div style="position:relative;top:10px;left:20px", class="container">
+  <%= form_tag(search_page_path,id: "search_form", :class => "center-block", :method => "get") do %>
+    <div class="input-group w-100 mx-50">
+      <%= select_tag "event_ids", options_from_collection_for_select(Event.all, :id, :name), :prompt => 'Elige tipo de Evento', class: "form-control red-border pl-4" %>
+      <%= select_tag "service_ids", options_from_collection_for_select(Service.all, :id, :name), :prompt => '¿Qué estás buscando', class: "form-control red-border pl-4" %>
+      <%= select_tag "region_ids", options_from_collection_for_select(Region.all, :id, :name), :prompt => '¿Dónde?', class: "form-control red-border pl-4" %>
+      <%= button_tag "Buscar", :class => 'btn btn-flat',:name => nil%>
+    </div>
+  <% end %>
+</div>
+
 <div class="container">
   <div class="card-container">
     <% @providers.each do |provider| %>
