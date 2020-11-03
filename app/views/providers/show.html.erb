@@ -62,4 +62,19 @@
     </form>
   </div>
 
+  <table>
+    <tr>
+      <td>
+        <% if policy(@provider).update? %>
+          <%= link_to 'Edit', edit_provider_path(provider) %>
+        <% end %>
+      </td>
+      <td>
+        <% if policy(@provider).destroy? %>
+          <%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure' } %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
 </div>
+
