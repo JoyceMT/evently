@@ -1,4 +1,5 @@
 class Provider < ApplicationRecord
+  has_many_attached :photos
   has_many :provider_services
   has_many :services, through: :provider_services
   has_many :provider_events
