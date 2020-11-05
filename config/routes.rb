@@ -24,6 +24,13 @@ Rails.application.routes.draw do
   post 'provider_events', to: 'provider_events#create'
   get 'provider_regions/new', to: 'provider_regions#new'
   post 'provider_regions', to: 'provider_regions#create'
+  get 'blogs', to: 'blogs#index', :as => 'blog_page'
+  get 'blogs/new', to: 'blogs#new'
+  post 'blogs', to: 'blogs#create'
+  get 'blogs/:id', to: 'blogs#show'
+  get 'blogs/:id/edit', to: 'blogs#edit'
+  patch 'blogs/:id', to: 'blogs#update'
+  delete 'blogs/:id', to: 'blogs#destroy'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
