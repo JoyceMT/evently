@@ -44,7 +44,9 @@
               <div class="card-price">
                 <p>$<%= provider[:price] %>/persona</span></p>
               </div>
-                <%=link_to '<button type="button" class="btn-pry">Ver más</button>'.html_safe, provider_path(provider)%>
+              <% if policy(provider).show? %>
+                <%= link_to 'Show', provider %>
+              <% end %>
             </div>
           </div>
         </div>

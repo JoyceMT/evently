@@ -1,5 +1,5 @@
 class ProvidersController < ApplicationController
-  before_action :set_provider, only: [:show, :edit, :update, :destroy]
+  before_action :set_provider, only: [:edit, :update, :destroy]
 
   def index
     if params[:event_ids]
@@ -14,6 +14,7 @@ class ProvidersController < ApplicationController
   end
 
   def show
+    @provider = Provider.find(params[:id])
   end
 
   def new
