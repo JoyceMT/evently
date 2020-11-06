@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="card-container">
+    <% @posts.each do |post| %>
+      <div class="card-product">
+        <div class="card-slider">
+          <div class="card-images">
+            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="...">
+          </div>
+        </div>
+        <div class="card-infos">
+          <div class="card-content">
+            <div class="card-infos-name">
+              <h2><%= post[:title] %></h2>
+            </div>
+            <div class="card-infos-description">
+              <p><%= post[:content].first(350).html_safe %></p>
+            </div>
+          </div>
+          <div class="card-infos-footer">
+            <% if policy(post).show? %>
+              <%= link_to 'Show', post_path(post) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
