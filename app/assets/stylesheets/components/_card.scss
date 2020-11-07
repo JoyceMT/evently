@@ -27,7 +27,7 @@
 }
 
 .card-content {
-  padding: 20px;
+  padding: 20px 30px;
   position: relative;
 }
 
@@ -41,8 +41,12 @@
 }
 
 .card-price p {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 0px;
+}
+
+.card-price span {
+  color: gray;
 }
 
 .card-infos-description {
@@ -52,6 +56,7 @@
   color: #6c6c6c;
   word-break: break-word;
   margin-top: -4px;
+  text-align: justify;
 }
 
 .card-infos-footer {
@@ -75,25 +80,14 @@
 }
 
 .card-categories {
-    overflow: hidden;
+  overflow: hidden;
+  margin-bottom: 5px;
 }
 
 .card-categories p {
   color: #6c6c6c;
   font-size: 21px;
   margin-top: -4px;
-}
-
-.btn-pry {
-  background-color: #ff2b3d;
-  border-radius: 4px;
-  border: 1px solid #ff2b3d;
-  padding: 5px 25px;
-  color: white;
-}
-
-.btn-pry:hover {
-  background-color: #D90416;
 }
 
 .card-category {
@@ -114,6 +108,12 @@
 
 .card-category a {
   color: white;
+}
+
+.card-sidebar {
+  display: grid;
+  grid-gap: 25px;
+  margin: 50px auto;
 }
 
 .cards {
