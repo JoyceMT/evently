@@ -1,0 +1,8 @@
+<div class="card-sidebar" style="width: 18rem;">
+  <% Post.last(3).each do |post| %>
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= post[:title] %></h5>
+      </div>
+  <% end %>
+</div>
