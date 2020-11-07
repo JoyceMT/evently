@@ -1,0 +1,51 @@
+.posts-banner {
+  background-color: #F9F9F9;
+  padding: max(100px);
+  height: 400px;
+  text-align: center;
+}
+
+.posts-banner h1 {
+  font-family: 'Kreon';
+  font-weight: 700;
+  font-size: 60px;
+}
+
+.posts-banner p {
+  font-size: 20px;
+  color: gray;
+}
+
+.posts-banner h3 {
+  color: gray;
+  margin-top: 20px;
+}
+
+.posts-container {
+  font-size: 22px;
+  text-align: justify;
+  padding: 5% 10%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 70% auto;
+}
+
+.post {
+  padding-right: 2%;
+}
+
+.post img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.posts-content {
+  margin-top: 50px;
+}
+
+.posts-sidebar {
+  text-align: center;
+  padding: 5%;
+}

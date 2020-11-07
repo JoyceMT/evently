@@ -13,13 +13,13 @@
               <h2><%= post[:title] %></h2>
             </div>
             <div class="card-infos-description">
-              <p><%= post[:content].first(350).html_safe %></p>
+              <p><%= post[:content].first(350).html_safe %>...</p>
             </div>
-          </div>
-          <div class="card-infos-footer">
-            <% if policy(post).show? %>
-              <%= link_to 'Show', post_path(post) %>
-            <% end %>
+            <div class="btn-right">
+              <% if policy(post).show? %>
+                <%= link_to 'Leer Más', post_path(post), :class => 'btn btn-flat' %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

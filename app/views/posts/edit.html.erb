@@ -1,0 +1,19 @@
+<div class="container">
+  <%= simple_form_for @post do |f| %>
+    <div class="form-group ml-1 mb-5 px-5">
+      <%= f.input :title, :label => "Título", class: 'form-control' %>
+      <br>
+      <%= f.input :content, :label => "Contenido", as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } } %>
+      <br>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <%= link_to "Cancel", "/pages/home", class: "btn btn-light" %>
+    </div>
+  <% end %>
+
+  <% if policy(post).show? %>
+    <%= link_to 'Show', post_path(post) %>
+  <% end %>
+
+  <%= link_to 'Back', posts_path %>
+
+</div>
