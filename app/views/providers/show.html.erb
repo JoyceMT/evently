@@ -27,8 +27,9 @@
 
       <div class="provider-extra-details">
         <h4>Precios</h4>
-        <p>Desde $<%= @provider.min_price %> hasta $<%= @provider.max_price %></p>
+        <p>Desde <strong>$<%= @provider.min_price %></strong> hasta <strong>$<%= @provider.max_price %></strong></p>
         <p>p/persona</p>
+        <br>
         <h4>Servicios </h4>
         <ul class="fa-ul">
           <% @provider.services.each do |service| %>

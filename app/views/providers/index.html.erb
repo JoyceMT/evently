@@ -34,7 +34,7 @@
               <span class="fa fa-star"></span>
             </div>
             <div class="card-categories">
-              <% provider.services.first(8).each do |service| %>
+              <% provider.services.first(5).each do |service| %>
                 <ul class="tags">
                   <li><a href="#" class="tag"><%= service.name %></a></li>
                 </ul>
@@ -42,10 +42,10 @@
             </div>
             <div class="card-infos-footer">
               <div class="card-price">
-                <p>$<%= provider[:price] %>/persona</span></p>
+                <p>$<%= provider[:min_price] %> - $<%= provider[:max_price] %><span>/persona</span></p>
               </div>
               <% if policy(provider).show? %>
-                <%= link_to 'Show', provider %>
+                <%= link_to 'Ver Más', provider, :class => 'btn btn-flat' %>
               <% end %>
             </div>
           </div>
