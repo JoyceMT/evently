@@ -30,7 +30,7 @@
       <%= f.submit "Submit", class: "btn btn-primary" %>
       <%= link_to "Cancel", "/pages/home", class: "btn btn-light" %>
       <% if policy(Provider).create? %>
-       <%= link_to "New provider", new_provider_path %>
+       <%= link_to "New provider", providers_new_path %>
       <% end %>
     </div>
   <% end %>
