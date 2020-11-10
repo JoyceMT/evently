@@ -14,7 +14,7 @@ class ProviderPolicy < ApplicationPolicy
   end
 
   def create?
-    true # Anyone can create a restaurant
+    user.present?
   end
 
   def update?
