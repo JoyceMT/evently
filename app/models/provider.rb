@@ -7,4 +7,5 @@ class Provider < ApplicationRecord
   has_many :provider_regions
   has_many :regions, through: :provider_regions
   has_many :categories, through: :services
+  belongs_to :user
 end
