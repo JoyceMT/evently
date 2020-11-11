@@ -1,10 +1,13 @@
 <div class="container">
+  <h1>Alta Nuevo Proveedor</h1>
+  <p>Por favor llena los siguientes datos:</p>
+
   <%= simple_form_for @provider do |f| %>
     <div class="form-group ml-1 mb-5 px-5">
       <h2>Tu empresa</h2>
       <%= f.input :name, :label => "Nombre", class: 'form-control' %>
       <br>
-      <%= f.input :address, :label => "Dirección" %>
+      <%= f.input :address, :label => "Dirección", input_html: { id: 'address-input'} %>
       <br>
       <%= f.input :phone, :label => "Teléfono" %>
       <br>

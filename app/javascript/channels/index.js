@@ -14,3 +14,10 @@ window.onscroll = () => {
       navbar.classList.add('navbar-inactive');
     }
 };
+
+var places = require('places.js');
+var placesAutocomplete = places({
+  appId: 'plFZ8FG53E30',
+  apiKey: '3551e24d4f9dadf5055cefc35cdab3e5',
+  container: document.querySelector('#address-input')
+});
