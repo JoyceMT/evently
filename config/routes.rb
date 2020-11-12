@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   get 'services/new', to: 'services#new'
   post 'services', to: 'services#create'
   get 'services/index', to: 'services#index'
+  get 'services/:id', to: 'services#show', as: :service
+  get 'services/:id/edit', to: 'services#edit', as: :edit_service
+  patch 'services/:id', to: 'services#update'
+  delete 'services/:id', to: 'services#destroy'
   get 'provider_categories/new', to: 'provider_categories#new'
   post 'provider_categories', to: 'provider_categories#create'
   get 'provider_events/new', to: 'provider_events#new'
