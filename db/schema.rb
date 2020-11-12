@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_05_213732) do
+ActiveRecord::Schema.define(version: 2020_11_12_000003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(version: 2020_11_05_213732) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "service_id"
-    t.index ["service_id"], name: "index_categories_on_service_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -106,6 +104,8 @@ ActiveRecord::Schema.define(version: 2020_11_05_213732) do
     t.integer "max_price"
     t.string "google"
     t.bigint "user_id"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_providers_on_user_id"
   end
 
@@ -119,6 +119,8 @@ ActiveRecord::Schema.define(version: 2020_11_05_213732) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_services_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -135,7 +137,6 @@ ActiveRecord::Schema.define(version: 2020_11_05_213732) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "categories", "services"
   add_foreign_key "posts", "users"
   add_foreign_key "provider_events", "events"
   add_foreign_key "provider_events", "providers"
@@ -144,4 +145,5 @@ ActiveRecord::Schema.define(version: 2020_11_05_213732) do
   add_foreign_key "provider_services", "providers"
   add_foreign_key "provider_services", "services"
   add_foreign_key "providers", "users"
+  add_foreign_key "services", "categories"
 end
