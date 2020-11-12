@@ -21,6 +21,15 @@ class ServicesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @service.update(service_params)
+
+    redirect_to services_index_path
+  end
+
   def destroy
     @service.destroy
   end
