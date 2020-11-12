@@ -1,4 +1,4 @@
-<div style="position:relative;top:10px;left:20px", class="container">
+<div style="position:relative;top:10px;left:20px", class="pages-container">
   <%= form_tag(search_page_path,id: "search_form", :class => "center-block", :method => "get") do %>
     <div class="input-group w-100 mx-50">
       <%= select_tag "event_ids", options_from_collection_for_select(Event.all, :id, :name), :prompt => 'Elige tipo de Evento', class: "form-control red-border pl-4" %>

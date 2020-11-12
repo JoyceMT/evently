@@ -1,7 +1,4 @@
-<div class="container">
-  <h1>Alta Nuevo Proveedor</h1>
-  <p>Por favor llena los siguientes datos:</p>
-
+<div class="pages-container">
   <%= simple_form_for @provider do |f| %>
     <div class="form-group ml-1 mb-5 px-5">
       <h2>Tu empresa</h2>
@@ -24,11 +21,19 @@
       <%= f.input :google %>
       <br>
       <h2> Para qué tipo de Eventos ofreces tus servicios?</h2>
-      <%= f.collection_check_boxes :event_ids, Event.all, :id, :name %>
+      <div class="col-md-4 checkbox-list">
+        <%= f.collection_check_boxes :event_ids, Event.all, :id, :name %>
+      </div>
       <h2>Que servicios ofreces?</h2>
-      <%= f.collection_check_boxes :service_ids, Service.all, :id, :name %>
+      <div class="col-md-4 checkbox-list">
+        <%= collection_check_boxes(:category_id, :service_ids, Service.all, :id, :name) do |b| %>
+          <%=b.label { b.check_box } %>
+        <% end %>
+      </div>
       <h2>En que Estados ofreces tu servicio?</h2>
-      <%= f.collection_check_boxes :region_ids, Region.all, :id, :name %>
+      <div class="col-md-4 checkbox-list">
+        <%= f.collection_check_boxes :region_ids, Region.all, :id, :name %>
+      </div>
       <br>
       <%= f.submit "Submit", class: "btn btn-primary" %>
       <%= link_to "Cancel", "/pages/home", class: "btn btn-light" %>
