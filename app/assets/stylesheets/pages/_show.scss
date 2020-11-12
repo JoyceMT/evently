@@ -1,3 +1,8 @@
+.pages-container {
+  margin-top: 200px;
+  padding: 0 200px;
+}
+
 .page-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -88,4 +93,15 @@
 .provider-form h4 {
   text-align: center;
   margin-bottom: 5%;
+}
+
+.checkbox-list input[type="checkbox"] {
+  display: inline-block;
+  width: 10%;
+}
+
+.checkbox-list input[type="checkbox"] + label {
+  display: inline-block;
+  margin-left: 10%;
+  width: 80%;
 }
