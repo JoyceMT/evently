@@ -26,9 +26,7 @@
       </div>
       <h2>Que servicios ofreces?</h2>
       <div class="col-md-4 checkbox-list">
-        <%= collection_check_boxes(:category_id, :service_ids, Service.all, :id, :name) do |b| %>
-          <%=b.label { b.check_box } %>
-        <% end %>
+        <%= f.input :service_ids, collection: Category.all, as: :grouped_select, group_method: :services, prompt: "Elige uno",  multiple: true %>
       </div>
       <h2>En que Estados ofreces tu servicio?</h2>
       <div class="col-md-4 checkbox-list">
