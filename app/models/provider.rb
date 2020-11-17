@@ -8,4 +8,8 @@ class Provider < ApplicationRecord
   has_many :regions, through: :provider_regions
   has_many :categories, through: :services
   belongs_to :user
+
+  def blank_stars
+    5 - rating.to_i
+  end
 end

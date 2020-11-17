@@ -10,11 +10,14 @@
       <br>
       <%= f.input :phone %>
       <br>
-      <%= f.input :price, as: :numeric %>
+      <%= f.input :min_price, as: :numeric %>
+      <%= f.input :max_price, as: :numeric %>
       <br>
       <%= f.input :facebook %>
       <br>
       <%= f.input :instagram %>
+      <br>
+      <%= f.input :rating %>
       <br>
       <%= f.submit "Submit", class: "btn btn-primary" %>
       <%= link_to "Cancel", "/", class: "btn btn-light" %>

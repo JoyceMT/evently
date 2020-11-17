@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'providers/new', to: 'providers#new'
   post 'providers', to: 'providers#create'
   get 'providers/:id', to: 'providers#show', as: :provider
-  get 'providers/:id/edit', to: 'providers#edit'
+  get 'providers/:id/edit', to: 'providers#edit', as: :edit_provider
   patch 'providers/:id', to: 'providers#update'
   delete 'providers/:id', to: 'providers#destroy'
   get 'categories/new', to: 'categories#new'

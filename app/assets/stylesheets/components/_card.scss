@@ -122,6 +122,10 @@
   grid-gap: 60px;
 }
 
+.fa-star {
+  color: orange;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

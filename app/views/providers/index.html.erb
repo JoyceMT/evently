@@ -27,14 +27,15 @@
               <p><%= provider[:address] %></p>
             </div>
             <div class="card-rating">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
+              <% provider[:rating].to_i.times do |i| %>
+                 <i class="fas fa-star"></i>
+              <% end %>
+              <% provider.blank_stars.times do |i| %>
+                <i class="far fa-star"></i>
+              <% end %>
             </div>
             <div class="card-categories">
-              <% provider.services.first(5).each do |service| %>
+              <% provider.services.first(4).each do |service| %>
                 <ul class="tags">
                   <li><a href="#" class="tag"><%= service.name %></a></li>
                 </ul>
