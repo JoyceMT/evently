@@ -21,7 +21,7 @@ export const MultiStepForm = () => {
     initialStep: 0
   ))
 
-  const props = { formData, serForm, navigation }
+  const props = { formData, setForm, navigation }
 
   switch(step.id) {
     case "names";
