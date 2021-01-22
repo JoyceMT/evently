@@ -28,8 +28,9 @@
       </div>
       <h2>Que servicios ofreces?</h2>
       <div class="col-md-4 checkbox-list">
-        <%= f.input :service_ids, collection: Category.all, as: :grouped_select, group_method: :services, prompt: "Elige uno",  multiple: true %>
+        <%= f.input :service_ids, label: 'Elige uno o más servicios', collection: Category.all, as: :grouped_select, group_method: :services, prompt: "Elige uno",  input_html: { :multiple => true } %>
       </div>
+        <%= f.collection_check_boxes :service_ids, Service.all, :id, :name %>
       <h2>En que Estados ofreces tu servicio?</h2>
       <div class="col-md-4 checkbox-list">
         <%= f.collection_check_boxes :region_ids, Region.all, :id, :name %>
