@@ -1,0 +1,51 @@
+.company-details {
+  background-color: white;
+  max-width: 1400px;
+  padding: 20px;
+  margin-bottom: 20px 0px;
+}
+
+.form-group h2 {
+  padding: 20px 0px;
+}
+
+.new-form-title {
+  font-size: 28px;
+  font-weight: 900;
+  margin-top: 50px;
+}
+
+.price-line {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+.priceline {
+  display: table-cell;
+}
+
+.service-title {
+  font-size: 24px;
+  color: #ff2b3d;
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.service-row input[type="checkbox"] + label {
+  display: inline-block;
+  margin-left: 10%;
+  width: 80%;
+}
+
+.alert-blue {
+  background-color: #E2F1F8;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
