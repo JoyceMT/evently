@@ -1,48 +1,68 @@
-<%= react_component("MultiStepForm") %>
-
 <div class="pages-container">
   <%= simple_form_for @provider do |f| %>
     <div class="form-group ml-1 mb-5 px-5">
-      <h2>Tu empresa</h2>
-      <%= f.input :name, :label => "Nombre", class: 'form-control' %>
-      <br>
-      <%= f.input :address, :label => "Dirección", input_html: { id: 'address-input'} %>
-      <br>
-      <%= f.input :phone, :label => "Teléfono" %>
-      <br>
-      <%= f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } } %>
-      <br>
-      <h2>¿A partir de qué precio se pueden contratar tus servicios?</h2>
-      <%= f.input :min_price, as: :numeric %> - <%= f.input :max_price, as: :numeric %>
-      <br>
-      <h2>Agrega tus redes sociales</h2>
-      <%= f.input :facebook %>
-      <br>
-      <%= f.input :instagram %>
-      <br>
-      <%= f.input :google %>
-      <br>
-      <h2> Para qué tipo de Eventos ofreces tus servicios?</h2>
-      <div class="col-md-4 checkbox-list">
-        <%= f.collection_check_boxes :event_ids, Event.all, :id, :name %>
+      <h2 class="new-form-title">Tu empresa</h2>
+      <div class="company-details">
+        <%= f.input :name, :label => false, :placeholder => "Nombre", class: 'form-control' %>
+        <br>
+        <%= f.input :address, :label => false, :placeholder => "Dirección", input_html: { id: 'address-input'} %>
+        <br>
+        <%= f.input :phone, :label => false, :placeholder => "Teléfono" %>
+        <br>
+        <%= f.input :description, :label => "Describe detalladamente tu empresa así como los servicios o productos que ofreces con la máxima información de interés para tus clientes potenciales.", as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } } %>
+        <br>
       </div>
-      <h2>Que servicios ofreces?</h2>
-      <% Category.all.map do |category| %>
-        <h2><%= category.name %></h2>
+      <h2 class="new-form-title">¿Para qué tipo de Eventos ofreces tus servicios?</h2>
+      <div class="company-details">
+        <p><span class="alert-blue">Elige todos los que apliquen:</span></p>
         <div class="col-md-4 checkbox-list">
-          <%= f.collection_check_boxes :service_ids, category.services, :id, :name %>
+          <%= f.collection_check_boxes :event_ids, Event.all, :id, :name %>
         </div>
-      <% end %>
-      <h2>En que Estados ofreces tu servicio?</h2>
-      <div class="col-md-4 checkbox-list">
-        <%= f.collection_check_boxes :region_ids, Region.all, :id, :name %>
       </div>
-      <br>
-      <%= f.submit "Submit", class: "btn btn-primary" %>
-      <%= link_to "Cancel", "/pages/home", class: "btn btn-light" %>
-      <% if policy(Provider).create? %>
-       <%= link_to "New provider", providers_new_path %>
-      <% end %>
+        <h2 class="new-form-title">¿Qué servicios ofreces?</h2>
+        <div class="company-details">
+          <p><span class="alert-blue">Elige todos los que apliquen:</span></p>
+          <div class="service-row">
+              <% Category.all.map do |category| %>
+                <div class="checkbox-list">
+                    <h2 class="service-title"><%= category.name %></h2>
+                  <%= f.collection_check_boxes :service_ids, category.services, :id, :name %>
+                </div>
+              <% end %>
+
+          </div>
+        </div>
+
+      <h2 class="new-form-title">¿En qué Estados ofreces tus servicios?</h2>
+
+      <div class="company-details">
+        <p><span class="alert-blue">Elige todos los que apliquen:</span></p>
+          <div class="service-row">
+            <%= f.collection_check_boxes :region_ids, Region.all, :id, :name %>
+          </div>
+      </div>
+      <h2 class="new-form-title">¿A partir de qué precio se pueden contratar tus servicios?</h2>
+        <div class="company-details">
+          <div class="price-line">
+            <div class="priceline">
+              <%= f.input :min_price, :label => false, :placeholder => "Precio mínimo", as: :numeric %>
+            </div>
+            <div class="priceline">
+              <%= f.input :max_price, :label => false, :placeholder => "Precio máximo", as: :numeric %>
+            </div>
+          </div>
+        </div>
+      <h2 class="new-form-title">Agrega tus redes sociales</h2>
+      <div class="company-details">
+        <%= f.input :facebook %>
+        <br>
+        <%= f.input :instagram %>
+        <br>
+        <%= f.input :google %>
+      </div>
+      <br/>
+      <%= f.submit "Registrar", class: "btn btn-pry" %>
+      <%= link_to "Cancelar", "/pages/home", class: "btn btn-light" %>
     </div>
   <% end %>
 </div>
