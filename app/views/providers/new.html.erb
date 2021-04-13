@@ -52,6 +52,10 @@
             </div>
           </div>
         </div>
+        <h2 class="new-form-title">Agrega tus fotos</h2>
+        <div class="company-details">
+          <%= f.input :photos, as: :file, input_html: { multiple: true }%>
+        </div>
       <h2 class="new-form-title">Agrega tus redes sociales</h2>
       <div class="company-details">
         <%= f.input :facebook %>

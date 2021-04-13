@@ -140,10 +140,10 @@ ActiveRecord::Schema.define(version: 2020_11_17_174426) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "posts", "users"
   add_foreign_key "provider_events", "events"
-  add_foreign_key "provider_events", "providers"
-  add_foreign_key "provider_regions", "providers"
+  add_foreign_key "provider_events", "providers", on_delete: :cascade
+  add_foreign_key "provider_regions", "providers", on_delete: :cascade
   add_foreign_key "provider_regions", "regions"
-  add_foreign_key "provider_services", "providers"
+  add_foreign_key "provider_services", "providers", on_delete: :cascade
   add_foreign_key "provider_services", "services"
   add_foreign_key "providers", "users"
   add_foreign_key "services", "categories"

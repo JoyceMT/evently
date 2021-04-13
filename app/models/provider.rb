@@ -1,10 +1,10 @@
 class Provider < ApplicationRecord
   has_many_attached :photos
-  has_many :provider_services
+  has_many :provider_services, dependent: :destroy
   has_many :services, through: :provider_services
-  has_many :provider_events
+  has_many :provider_events, dependent: :destroy
   has_many :events, through: :provider_events
-  has_many :provider_regions
+  has_many :provider_regions, dependent: :destroy
   has_many :regions, through: :provider_regions
   has_many :categories, through: :services
   belongs_to :user

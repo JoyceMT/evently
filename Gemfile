@@ -36,6 +36,8 @@ gem 'pundit'
 
 gem 'react-rails'
 
+gem 'jquery-ui-rails'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'

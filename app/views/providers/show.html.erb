@@ -40,10 +40,10 @@
 
     </div>
     <% if policy(@provider).update? %>
-      <%= link_to 'Edit', edit_provider_path(@provider) %>
+      <%= link_to 'Editar', edit_provider_path(@provider) %>
     <% end %>
     <% if policy(@provider).destroy? %>
-      <%= link_to 'Destroy', @provider, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Eliminar', @provider, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
   </div>
 
